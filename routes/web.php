@@ -26,5 +26,6 @@ Route::get('/', function () {
 });
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('/dashboard',TodoController::class);
+    Route::get('/about',[\App\Http\Controllers\AboutCotroller::class,'index'])->name('about.index');
 });
 
